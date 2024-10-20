@@ -24,7 +24,6 @@
     "@types/node": "^20.14.8",
     "@vue/language-plugin-pug": "^2.1.6",
     "autoprefixer": "^10.4.2",
-    "sass": "^1.80.3",
     "typescript": "~5.5.4"
   },
   "engines": {
