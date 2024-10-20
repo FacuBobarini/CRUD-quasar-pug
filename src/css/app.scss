@@ -1,1 +1,8 @@
 // app global css in SCSS form
+$navbar-background: #f8f9fa;
+$nav-item-hover: #1976D2;
+$nav-item-active: #1976D2; 
+$nav-item-hover-color: #e1e1e1;
+$nav-item-primary-color: #121212;
+
+@import '_navbar.scss';
