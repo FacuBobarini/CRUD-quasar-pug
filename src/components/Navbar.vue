@@ -12,7 +12,6 @@
 </template>
   
 <script lang="ts">
-
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -20,36 +19,43 @@ export default defineComponent({
 });
 </script>
   
-<style scoped> 
+<style lang="scss" scoped>
+$navbar-background: #f8f9fa;
+$nav-item-hover: #1976D2;
+$nav-item-active: #1976D2; 
+$nav-item-hover-color: #e1e1e1;
+$nav-item-primary-color: #121212;
+
+
 .navbar {
   display: flex;
   justify-content: center;
   list-style-type: none;
   padding: 15px 0px;
   margin: 0px;
-  background-color: #f8f9fa;
-}
+  background-color: $navbar-background;
 
-.nav-item {
-  margin: 0px 15px;
-}
+  .nav-item {
+    margin: 0px 15px;
 
-.nav-item a {
-  text-decoration: none;
-  color: #121212;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-}
+    a {
+      text-decoration: none;
+      color: $nav-item-primary-color;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
 
-.nav-item a:hover {
-  background-color: #1976D2;
-  color: white; 
-}
+      &:hover {
+        background-color: $nav-item-hover;
+        color: $nav-item-hover-color;
+      }
 
-.nav-item a:active {
-  background-color: #1976D2;
-  color: white;
+      &:active {
+        background-color: $nav-item-active;
+        color: $nav-item-hover-color;
+      }
+    }
+  }
 }
 </style>
