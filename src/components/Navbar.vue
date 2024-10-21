@@ -2,13 +2,13 @@
   nav
     ul.navbar
       li.nav-item
-        a(href="/create") Create
+        a(href="#/create") Create
       li.nav-item
-        a(href="/read") Read
+        a(href="#/read") Read
       li.nav-item
-        a(href="/update") Update
+        a(href="#/update") Update
       li.nav-item
-        a(href="/delete") Delete
+        a(href="#/delete") Delete
 </template>
   
 <script lang="ts">
