@@ -8,7 +8,8 @@ const routes: RouteRecordRaw[] = [
       { path: '', component: () => import('pages/Home.vue') },
       { path: 'create', component: () => import('pages/Create.vue') },
       { path: 'read', component: () => import('pages/Read.vue') },
-      { path: 'update', component: () => import('pages/Update.vue') }
+      { path: 'update', component: () => import('pages/Update.vue') },
+      { path: 'delete', component: () => import('pages/Delete.vue') }
     ],
   },
   {
