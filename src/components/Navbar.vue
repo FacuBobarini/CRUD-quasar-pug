@@ -1,14 +1,13 @@
 <template lang="pug">
-  nav
-    ul.navbar
-      li.nav-item
-        a(href="#/create") Create
-      li.nav-item
-        a(href="#/read") Read
-      li.nav-item
-        a(href="#/update") Update
-      li.nav-item
-        a(href="#/delete") Delete
+  q-toolbar
+    q-toolbar-title.text-weight-medium CRUD-Quasar-Project
+
+  q-tabs
+    q-route-tab(to="create") Create
+    q-route-tab(to="read") Read
+    q-route-tab(to="update") Update
+    q-route-tab(to="delete") Delete
+
 </template>
   
 <script lang="ts">
