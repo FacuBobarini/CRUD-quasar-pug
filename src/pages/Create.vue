@@ -1,6 +1,6 @@
 <template lang="pug">
-  q-page.row.justify-evenly.page-container
-    Form
+  q-page.column.items-center.justify-left.q-pt-md.bg-grey-4
+    Form(@formSent="submitForm")
 </template>
 
 <script lang="ts">
@@ -12,9 +12,6 @@ export default defineComponent({
 
   components: {
     Form
-  },
-
-  setup () {
   }
 });
 </script>
