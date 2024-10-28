@@ -1,22 +1,26 @@
 <template lang="pug">
-  form 
-    div.form-group
-      label(for="name") Nombre
-      input(id="name" placeholder="Escribe tu nombre").form-control
-    div.form-group
-      label(for="lastname") Apellido
-      input(id="lastname" placeholder="Escribe tu apellido").form-control
-    div.form-group
-      label(for="dni") DNI
-      input(id="dni" placeholder="Escribe tu DNI").form-control
-    button(type="submit").btn Submit
+  q-form
+    q-input(outlined v-model="formData.name" label="Nombre" hint="Coloca tu nombre" lazy-rules :rules="[ val => val && val.length > 0 || 'El campo esta vacio!']").q-pt-sm
+    q-input(outlined v-model="formData.lastName" label="Apellido" hint="Coloca tu apellido" lazy-rules :rules="[ val => val && val.length > 0 || 'El campo esta vacio!']").q-pt-sm
+    q-input(outlined v-model="formData.dni" label="DNI" hint="Coloca tu DNI" lazy-rules :rules="[ val => val && val.length > 0 || 'El campo esta vacio!', val => /^([0-9])*$/.test(val) || 'Solo se permiten numeros!']").q-pt-sm 
+    q-btn(unelevated  color="primary" type="submit").q-ma-sm Create
 </template>
     
 <script lang="ts">
 import { defineComponent } from 'vue';
   
 export default defineComponent({
-  name: 'Form'
+  name: 'Form',
+
+  data() {
+    return {
+      formData: {
+        name: '',
+        lastName: '',
+        dni: ''
+      }
+    };
+  }
 });
 </script>
     
