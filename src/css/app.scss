@@ -1,11 +1,7 @@
 // app global css in SCSS form
-$navbar-background: #f8f9fa;
-$btn-backgound: #1976D2; 
-$secondary-color: #e1e1e1;
-$primary-color: #121212;
-$input-color:#495057;
-$input-background: #fff;
-$border-primary-color: #ced4da;
-
-@import '_navbar.scss';
-@import '_form.scss';
+body{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+}
+.q-field__bottom{
+  padding: 3px 12px 0;
+}
