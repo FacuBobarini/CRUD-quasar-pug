@@ -3,7 +3,7 @@
     q-input(bottom-slots outlined v-model="data.id" label="Ingresar ID" hint="Buscar por id")
         template(v-slot:append)
           q-icon(v-if="data.id !== ''" name="close" @click="data.id = ''" class="cursor-pointer")
-          q-btn(round dense flat icon="send" @click="")
+          q-btn(round dense flat icon="send" @click="emitData")
 </template>
 
 <script lang="ts">
@@ -17,6 +17,12 @@ export default defineComponent({
         id: ''
       }
     };
+  },
+
+methods: {
+  emitData() {
+    this.$emit('dataSent', this.data);
   }
+}
 })
 </script>
