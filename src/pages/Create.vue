@@ -1,6 +1,6 @@
 <template lang="pug">
   q-page.column.items-center.justify-left.q-pt-md.bg-grey-4
-    Form(@formSent="submitForm")
+    Form(@formSent="submitForm" label="CREATE")
 </template>
 
 <script lang="ts">
