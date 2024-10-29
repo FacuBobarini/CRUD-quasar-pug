@@ -1,7 +1,7 @@
 <template lang="pug">
-  q-page.row.items-center.justify-evenly.column
-    Search
-    Form
+  q-page.column.items-center.justify-start.bg-grey-4
+    Search(@dataSent="searchById")
+    Form(label="UPDATE")
 </template>
 
 <script lang="ts">
@@ -14,6 +14,14 @@ export default defineComponent({
   components: {
     Search,
     Form
+  },
+
+  methods: {
+    searchById(data:any){
+      //search
+    }
   }
+
+
 })
 </script>
