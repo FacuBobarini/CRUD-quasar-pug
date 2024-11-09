@@ -4,9 +4,14 @@
 </template>
 
 <script lang="ts">
+import axios from 'axios';
+import { useQuasar } from 'quasar';
 import Form from 'src/components/Form.vue';
 import { FormInterface } from 'src/components/interfaces/formInterface';
+import { AxiosResponse } from 'src/components/interfaces/personInterface';
 import { defineComponent } from 'vue';
+
+const $q = useQuasar()
 
 export default defineComponent({
   name: 'Create',
@@ -28,12 +33,21 @@ export default defineComponent({
   methods: {
     submitForm(form:FormInterface) {
       this.form = form;
-      this.createRegister()
+      this.createRegister(this.form)
     },
 
-    createRegister() {
+    async createRegister(form:FormInterface) {
       try {
-        //axios fetch and notify alert
+        const newPerson: AxiosResponse = await axios.post('https://crud-nestjs-icek.onrender.com/person', {
+          name: form.name,
+          lastName: form.lastName,
+          dni: form.dni
+        })
+
+        this.$q.notify({
+        message: `Se cargaron los datos de ${form.name}`
+      })
+        
       }
       catch (error) {
         console.error("Error: ", error)

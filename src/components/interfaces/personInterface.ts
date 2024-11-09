@@ -5,9 +5,17 @@ export interface PeopleInterface{
   dni:number;
 }
 
+export interface PersonInterface{
+  _id?:string;
+  name:string;
+  lastName:string;
+  dni:number;
+}
+
 export interface PeopleResponse{
   status: string;
-  people:[PeopleInterface];
+  person?: PersonInterface;
+  people?:[PeopleInterface];
 }
 
 export interface AxiosResponse{
