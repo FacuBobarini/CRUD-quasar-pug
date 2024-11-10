@@ -20,7 +20,7 @@ export default defineComponent({
 
 methods: {
   emitData() {
-    this.$emit('dataSent', this.data);
+    this.$emit('dataSent', this.data.id);
   }
 }
 })
