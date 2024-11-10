@@ -5,7 +5,7 @@
 
 <script lang="ts">
 import axios, { AxiosResponse } from 'axios';
-import { PeopleInterface } from 'src/components/interfaces/personInterface';
+import { PersonInterface } from 'src/components/interfaces/personInterface';
 import List from 'src/components/List.vue';
 import { defineComponent } from 'vue'
 export default defineComponent({
@@ -17,7 +17,7 @@ export default defineComponent({
     
     data() {
       return {
-        people:[] as PeopleInterface[]
+        people:[] as PersonInterface[]
       }
     },
 

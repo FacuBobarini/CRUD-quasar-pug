@@ -22,7 +22,7 @@
     
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { PeopleInterface } from './interfaces/personInterface';
+import { PersonInterface } from './interfaces/personInterface';
 import { copyToClipboard, useQuasar } from 'quasar';
 
 const $q = useQuasar()
@@ -32,7 +32,7 @@ export default defineComponent({
   
   props: {
     person: {
-      type: Object as PropType<PeopleInterface>,
+      type: Object as PropType<PersonInterface>,
       required: true
     },
   },
