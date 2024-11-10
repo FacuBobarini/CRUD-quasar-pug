@@ -1,12 +1,6 @@
-export interface PeopleInterface{
-  _id:string;
-  name:string;
-  lastName:string;
-  dni:number;
-}
 
 export interface PersonInterface{
-  _id?:string;
+  _id:string;
   name:string;
   lastName:string;
   dni:number;
@@ -15,7 +9,7 @@ export interface PersonInterface{
 export interface PeopleResponse{
   status: string;
   person?: PersonInterface;
-  people?:[PeopleInterface];
+  people?:[PersonInterface];
 }
 
 export interface AxiosResponse{
