@@ -41,11 +41,6 @@ export default defineComponent({
   },
 
   methods: {
-
-    hintForm(submit:string) {
-      
-    },
-
     emitForm() {
       this.$emit('formSent', this.formData);
     }
