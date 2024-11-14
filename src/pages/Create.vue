@@ -1,6 +1,10 @@
 <template lang="pug">
   q-page.column.items-center.justify-left.q-pt-md.bg-grey-4
-    Form(@formSent="submitForm" label="CREATE")
+    Form(@formSent="submitForm" 
+    label="CREATE" 
+    :hintText="'Porfavor ingresa tu'"
+    :rules="[val => val && val.length > 0 || 'El campo esta vacio!']"
+    :rulesDNI="[val => val && val.length > 0 || 'El campo esta vacio!',val => /^([0-9])*$/.test(val) || 'Solo se permiten numeros!']")
 </template>
 
 <script lang="ts">
@@ -38,15 +42,18 @@ export default defineComponent({
 
     async createRegister(form:FormInterface) {
       try {
-        const newPerson: AxiosResponse = await axios.post('https://crud-nestjs-icek.onrender.com/person', {
-          name: form.name,
-          lastName: form.lastName,
-          dni: form.dni
-        })
-
-        this.$q.notify({
-        message: `Se cargaron los datos de ${form.name}`
-      })
+        const newPerson: AxiosResponse = await axios.post('https://crud-nestjs-icek.onrender.com/person', form)
+        if(newPerson.data.status === "success"){
+          return this.$q.notify({
+          message: `Se cargaron los datos de ${form.name}`
+          })
+        }else{
+          return this.$q.notify({
+          type: 'negative',
+          color: 'red',
+          message: 'Error, no se cargaron los datos'
+          })
+        }
         
       }
       catch (error) {
